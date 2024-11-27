@@ -17,7 +17,7 @@ export default function DynamicTable() {
 
     // Loop through each year and calculate basic amount & savings
     for (let year = startYear; year <= endYear; year++) {
-      const savings = currentAmount * savingsRate;
+      const savings = currentAmount * savingsRate *12;
       rows.push({ year, basic: currentAmount.toFixed(2), savings: savings.toFixed(2) });
       currentAmount = Math.min(currentAmount * 1.05, maxAmount); // Apply 5% increment, capped at maxAmount
     }
